@@ -1,10 +1,10 @@
-require('dotenv').config()
+require('dotenv').config(); 
 
 const sql = require('mssql/msnodesqlv8')
 
+const dbConnect = process.env.connectionString
 
-
-var config = {driver : 'msnodesqlv8' , connectionString :'Driver={SQL Server};Server=DESKTOP-H2L1BKH\\SQLEXPRESS;Trusted_Connection=yes;'}
+var config = {driver : 'msnodesqlv8' , connectionString:dbConnect}
 
 
 // var config = {
@@ -20,8 +20,9 @@ const poolConnect = pool.connect()
 
 
 const connectDb  = async () => {
-    try {
+    try {   
         await poolConnect;
+        console.log('connected')
         return poolConnect
        
     } catch (error) {
