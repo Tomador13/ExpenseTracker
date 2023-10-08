@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use('/expensetracker' ,router)
 
-app.listen(process.env.PORT ,async ()=>{
+app.listen(process.env.PORT , async ()=>{
     await connectDb()
     console.log('listening to port', process.env.PORT)
 })

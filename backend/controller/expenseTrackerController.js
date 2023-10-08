@@ -8,19 +8,32 @@ module.exports = class EXPENSEAPI {
     }
     static async login(req,res){
         res.send('Log in')
+
+
     }
-    static async signUp (req,res){
+    static async signUp (req,res){ 
+        try { 
         let {username, password} = req.body
         let paramsdata = {
-            table_name: 'expense_user',
-            column_name: 'expense_username, expense_password',
-            value: `'${username}', '${password}'`
+            table_name: 'expense_users',
+            column_name: 'expense_username,expense_password',
+            value: [`${username}`,`${password}`]
         }
-        console.log(paramsdata)
         let insertquery = await SQLFUNCTIONS.INSERTQUERY(paramsdata)
-
         
-        res.send('createed!')
+        res.status(201).send({
+            responsecode: 1,
+            messege: insertquery.messege
+        })   
+        } catch (error) {
+            res.status(400).json({
+                responsecode:0,
+                messege: error
+            })
+                
+        }
+        
+
     }
 
 }
