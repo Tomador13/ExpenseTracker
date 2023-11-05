@@ -6,11 +6,7 @@ const HomePage = () => {
     const [ price , setPrice ] = useState()
 
     const handleClick = () => {
-        if(money < price){
-            setInitialName ( 'Not Enough Balance' )
-        }else{
-            setMoney ( money - price )
-        }
+        money < price ? setInitialName ( 'Not Enough Balance' ) : setMoney ( money - price ) ;
     }
 
     return <>
