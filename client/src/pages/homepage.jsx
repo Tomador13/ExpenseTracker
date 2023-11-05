@@ -4,11 +4,15 @@ const HomePage = () => {
     const [ initialName , setInitialName ] = useState( 'Expense Tracker for You' )
     const [ name , setName ] = useState('')
     const [ price , setPrice ] = useState()
+    const [ list , setList ] = useState([])
 
     const handleClick = () => {
         money < price ? setInitialName ( 'Not Enough Balance' ) : setMoney ( money - price ) ;
+        setList([ ...list , name ])
+        setName('')
+        setPrice('')
+        console.log(...list)
     }
-
     return <>
         <section className="homepage">
             <div>
@@ -24,6 +28,12 @@ const HomePage = () => {
                     />
                 <button onClick={ handleClick }>Submit</button>
             </div>
+                <ol>
+                    { list.map( ( e , index ) => (
+                        <li>{ e }</li>
+                    ))}
+                </ol>
+
         </section>
     </>
 
