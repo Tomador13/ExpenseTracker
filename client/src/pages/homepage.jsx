@@ -20,10 +20,12 @@ const HomePage = () => {
                 <h1>Balance: { money }</h1>
                     <input type="text" 
                         placeholder = "Item Name"
+                        value = { name }
                         onChange = { (e) => { setName( e.target.value ) } }
                     />
                     <input type="text" 
                         placeholder="Price"
+                        value = { price }
                         onChange = { (e) => { setPrice ( e.target.value ) } }
                     />
                 <button onClick={ handleClick }>Submit</button>
