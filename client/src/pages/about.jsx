@@ -1,9 +1,13 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+import Homepage from "/homepage"
+
 const About = () => {
     const [ balance , setBalance ] = useState(0)
 
     const handleClick = () => {
-
+       return <Homepage initialMoney = {balance} />
+       
     }
     
     return <>
@@ -14,7 +18,7 @@ const About = () => {
                    value = {balance} 
                    onChange = { (e) => {setBalance( e.target.value )}} 
             />
-            <button onClick = { handleClick }>Enter Money</button>
+            <button onClick = { handleClick }>Enter Money</button><Link to = "/" />
         </section>
     </>
 }

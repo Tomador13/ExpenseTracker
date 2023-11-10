@@ -1,6 +1,7 @@
 import { useState } from "react";
-const HomePage = () => {
-    const [ money , setMoney ] = useState( 5000 )
+
+const HomePage = ({ initialMoney }) => {
+    const [ money , setMoney ] = useState( initialMoney )
     const [ initialName , setInitialName ] = useState( 'You' )
     const [ name , setName ] = useState('')
     const [ price , setPrice ] = useState()
