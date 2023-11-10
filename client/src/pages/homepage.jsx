@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+
 
 const HomePage = () => {
-    const location = useLocation();
-    const initialMoney = location.state ? location.state.initialMoney : 0; 
-    const [money, setMoney] = useState(initialMoney);
+    const [money, setMoney] = useState( 0 );
     const [initialName, setInitialName] = useState('You');
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -17,7 +15,6 @@ const HomePage = () => {
         setList([...list, name]);
         setName('');
         setPrice('');
-        console.log(...list);
     };
 
     const goto = () => {
