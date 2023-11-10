@@ -10,7 +10,7 @@ const App = () => {
             <Routes>
                 <Route 
                     path = "/"
-                    element = { <HomePage /> }
+                    element = { <HomePage initialMoney = {0} /> }
                 />
                 <Route
                     path = "/about"
