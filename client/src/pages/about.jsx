@@ -6,7 +6,7 @@ const About = () => {
     const [ balance , setBalance ] = useState(0)
 
     const handleClick = () => {
-       <Homepage initialMoney = {balance} />
+    //    <Homepage initialMoney = {balance} />
        
     }
     
