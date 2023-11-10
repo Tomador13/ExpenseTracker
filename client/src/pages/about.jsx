@@ -1,6 +1,6 @@
 import { useState } from "react"
 const About = () => {
-    const [ balance , setBalance ] = useState("")
+    const [ balance , setBalance ] = useState(0)
 
     const handleClick = () => {
 
