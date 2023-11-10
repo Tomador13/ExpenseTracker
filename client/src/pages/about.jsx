@@ -1,11 +1,12 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link , useHistory } from "react-router-dom"
 
 const About = () => {
     const [ balance , setBalance ] = useState(0)
+    const history = useHistory();
 
     const handleClick = () => {
-    //    <Homepage initialMoney = {balance} />
+     history.push("/", { initialMoney: balance });
        
     }
     
