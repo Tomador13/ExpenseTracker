@@ -13,11 +13,15 @@ const HomePage = () => {
         setPrice('')
         console.log(...list)
     }
+    
+    const goto = () => {
+        window.location = '/about'
+    }
     return <>
         <section className="homepage">
             <div>
                 <h1> Expense Tracker for { initialName } </h1>
-                <h1>Balance: { money }</h1>
+                <h1 onClick = { goto } >Balance: { money }</h1>
                     <input type="text" 
                         placeholder = "Item Name"
                         value = { name }
