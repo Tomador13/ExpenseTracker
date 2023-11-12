@@ -17,7 +17,7 @@ const About = () => {
                    value = {balance} 
                    onChange = { (e) => {setBalance( e.target.value )}} 
             />
-            <button onClick = { handleClick }>Enter Money</button><Link to = "/">Go to HomePage</Link>
+            <button onClick = { handleClick }>Enter Money</button>
         </section>
     </>
 }
